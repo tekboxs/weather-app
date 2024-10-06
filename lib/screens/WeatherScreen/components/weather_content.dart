@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:test_project/components/icon_text.dart';
 import 'package:test_project/domain/Weather/weather_model.dart';
 import 'package:test_project/helpers/utils/date_handler.dart';
-import 'package:test_project/screens/WeatherScreen/weather_screen_controller.dart';
 import 'package:weather_icons/weather_icons.dart';
 
 class WeatherContent extends StatefulWidget {
