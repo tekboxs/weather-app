@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
+
 class AsyncBuilder<T> extends StatelessWidget {
   final Future<T>? future;
   final Widget Function(T? data) builder;
   final Widget Function(String error) errorBuilder;
   final Widget loadingWidget;
-const AsyncBuilder(
-      {Key? key,
-      required this.future,
-      required this.builder,
-      required this.errorBuilder,
-      this.loadingWidget = const CircularProgressIndicator.adaptive(),
-      })
-      : super(key: key);
+  const AsyncBuilder({
+    super.key,
+    required this.future,
+    required this.builder,
+    required this.errorBuilder,
+    this.loadingWidget = const CircularProgressIndicator.adaptive(),
+  });
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return FutureBuilder<T>(
       future: future,
       builder: (context, snapshot) {

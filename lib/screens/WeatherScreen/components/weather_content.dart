@@ -8,13 +8,16 @@ class WeatherContent extends StatefulWidget {
   final Current current;
   final Location location;
 
-  const WeatherContent(
-      {Key? key, required this.current, required this.location})
-      : super(key: key);
+  const WeatherContent({
+    super.key,
+    required this.current,
+    required this.location,
+  });
 
   @override
-  _WeatherContentState createState() => _WeatherContentState();
+  State<WeatherContent> createState() => _WeatherContentState();
 }
+
 class _WeatherContentState extends State<WeatherContent> {
   String time = '';
   String weekDay = DateHandler.getWeekDay();
@@ -36,6 +39,10 @@ class _WeatherContentState extends State<WeatherContent> {
       children: [
         Text(
           "${widget.current.tempC}C",
+          //ideal serria fazer isso pelo theme
+          //style: Theme.of(context).textTheme.headline4
+          //ou usar theme extension
+
           style: const TextStyle(fontSize: 50, fontWeight: FontWeight.w400),
         ),
         const SizedBox(

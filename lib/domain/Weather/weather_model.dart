@@ -47,6 +47,7 @@ class Location {
   }
 }
 
+///model de api é melhor deixar tudo nullable pra evitar erros
 class Current {
   final int lastUpdatedEpoch;
   final String lastUpdated;

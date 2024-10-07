@@ -8,15 +8,15 @@ class WeatherHeader extends StatefulWidget {
   final Function(String text) debouncedSearch;
   final Function(String city) getWeatherByCity;
   final Function() getCurrentWeatherData;
-  const WeatherHeader(
-      {Key? key,
-      required this.debouncedSearch,
-      required this.getWeatherByCity,
-      required this.getCurrentWeatherData})
-      : super(key: key);
+  const WeatherHeader({
+    super.key,
+    required this.debouncedSearch,
+    required this.getWeatherByCity,
+    required this.getCurrentWeatherData,
+  });
 
   @override
-  _WeatherHeaderState createState() => _WeatherHeaderState();
+  State<WeatherHeader> createState() => _WeatherHeaderState();
 }
 
 class _WeatherHeaderState extends State<WeatherHeader> {
@@ -112,7 +112,7 @@ class _WeatherHeaderState extends State<WeatherHeader> {
               ),
           ]),
         ),
-        WeatherSunnyAnimated()
+        const WeatherSunnyAnimated()
       ],
     );
   }
